@@ -1,0 +1,336 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+.page {
+  height: 100vh;
+  display: grid;
+  position: relative;
+  margin: 0 0 10px 0;
+}
+.page:last-child{
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.menu {
+  position: sticky;
+  top: 0;
+  font-family: "Rubik Mono One", sans-serif;
+  z-index: 999;
+  border-bottom: 1px solid black;
+  background: white;
+}
+.menu ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  margin: 0 !important;
+}
+.menu li {
+  padding: 10px 5px;
+  width: 100%;
+  text-align: center;
+  border-right: 1px solid black;
+}
+.menu li:last-child {
+  border: none;
+}
+.menu a {
+  color: black !important;
+}
+.aside-text {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.7rem;
+  line-height: 2rem;
+  font-style: italic;
+}
+.grid-container-1 {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+
+  grid-template-areas: "Image Image Image . . . . ." "Image Image Image Headline Headline Headline . ." ". . . . Author Author Author .";
+}
+
+.Headline {
+  grid-area: Headline;
+  font-family: "Rubik Mono One", sans-serif;
+}
+.Headline h2 {
+  font-size: 4rem;
+}
+
+.Author {
+  grid-area: Author;
+}
+
+.Image {
+  grid-area: Image;
+}
+.Image img {
+  width: 350px;
+}
+
+.line {
+  position: absolute;
+  width: 60vw;
+  height: 1px;
+  border: 1px solid black;
+  top: 55%;
+  left: 48%;
+  transform: rotate(0.43turn);
+}
+.grid-container-2 {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: ". . Face Face Face Face Face Face" ". . Face Face Face Face Face Face" ". . . . . . . ." ". . Speach Speach Speach . . ." ". . . . . . . ." ". . . . SpeachWithAuthor SpeachWithAuthor SpeachWithAuthor .";
+}
+img.letter {
+  position: absolute;
+  z-index: 10;
+  width: 330px;
+  height: auto;
+  top: 50%;
+  left: 9%;
+}
+
+.Face {
+  grid-area: Face;
+}
+.Face img {
+  width: 100%;
+}
+
+.Speach {
+  grid-area: Speach;
+}
+.Speach p {
+  position: relative;
+  z-index: 15;
+}
+.Speach p:last-child {
+  margin: 20px 0 0 0;
+}
+
+.SpeachWithAuthor {
+  grid-area: SpeachWithAuthor;
+}
+.SpeachWithAuthor p:last-child {
+  text-align: right;
+  margin: 20px 30px 10px;
+  font-size: 1.5rem;
+  color: rgb(126, 126, 126);
+}
+
+.grid-container-3 {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: ". Image-area Image-area Image-area Image-area Image-area Image-area ." ". Image-area Image-area Image-area Image-area Image-area Image-area ." ". Image-area Image-area Image-area Image-area Image-area Image-area ." ". Image-area Image-area Image-area Image-area Image-area Image-area ." ". . . . . . . ." ". . . Text-Author Text-Author Text-Author Text-Author .";
+}
+
+.Image-area {
+  grid-area: Image-area;
+  display: flex;
+  justify-content: center;
+}
+.Image-area img,
+.Image-area-2 img {
+  width: 90%;
+  height: auto;
+  transition: 0.3s;
+  filter: grayscale(100%);
+}
+.Image-area-2 img {
+  height: 100% !important;
+}
+.Image-area img:hover,
+.Image-area-2 img:hover {
+  filter: grayscale(0%);
+}
+.letter-2 {
+  position: absolute;
+  width: 200px;
+  top: 67%;
+  left: 16%;
+}
+.Text-Author {
+  grid-area: Text-Author;
+}
+.Text-Author p:last-child {
+  padding: 15px 0 0 0;
+}
+
+.grid-container-4 {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: ". . . . . . . ." ". . Text-area-2 Text-area-2 Text-area-2 Text-area-2 Text-area-2 ." "Image-area-2 Image-area-2 Image-area-2 Image-area-2 Image-area-2 Image-area-2 . ." "Image-area-2 Image-area-2 Image-area-2 Image-area-2 Image-area-2 Image-area-2 . ." "Image-area-2 Image-area-2 Image-area-2 Image-area-2 Image-area-2 Image-area-2 . ." "Image-area-2 Image-area-2 Image-area-2 Image-area-2 Image-area-2 Image-area-2 . .";
+}
+
+.Text-area-2 {
+  grid-area: Text-area-2;
+}
+
+.Image-area-2 {
+  grid-area: Image-area-2;
+}
+
+.line-2 {
+  position: absolute;
+  width: 50vw;
+  height: 1px;
+  border: 1px solid black;
+  top: 0;
+  left: -23%;
+  transform: rotate(0.03turn);
+}
+
+.grid-container-5 {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: ". Image-area Image-area Image-area Image-area Image-area ." ". Image-area Image-area Image-area Image-area Image-area ." ". Image-area Image-area Image-area Image-area Image-area ." ". Image-area Image-area Image-area Image-area Image-area ." ". . . Text-area-3 Text-area-3 Text-area-3 ." ". . . . . . .";
+}
+
+.Text-area-3 {
+  display: flex;
+  align-items: flex-end;
+  grid-area: Text-area-3;
+}
+
+.line-3 {
+  position: absolute;
+  width: 51vw;
+  height: 1px;
+  border: 1px solid black;
+  top: 95%;
+  left: -10%;
+  transform: rotate(0.97turn);
+}
+
+.Text-area-3 p {
+  padding: 30px 0 0 0;
+}
+
+.grid-container-6 {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: ". . . . . . ." ". . Text-arae-4 Text-arae-4 Text-arae-4 . ." ". Slider Slider Slider Slider Slider ." ". Slider Slider Slider Slider Slider ." ". Slider Slider Slider Slider Slider ." ". . . . . . .";
+}
+
+.Text-arae-4 {
+  grid-area: Text-arae-4;
+}
+
+.Slider {
+  grid-area: Slider;
+  display: flex;
+}
+
+.Slider img{
+  width: 100%;
+  height: 100%;
+}
+.btn{
+  width: 100px;
+  border: none;
+  background: none;
+}
+.btn:focus{
+  outline: none;
+}
+
+.container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
+
+.track {
+  display: flex;
+  transition: 0.2s;
+}
+
+.item img{
+  width: 100%;
+  height: 550px;
+  filter: grayscale(100%);
+  transition: .3s;
+}
+.item img:hover{
+  filter: grayscale(0);
+}
+
+
+.grid-container-7{
+  overflow: hidden;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: ". . . . . . . ." ". Image-area-5 Image-area-5 . . Email Email ." ". Image-area-5 Image-area-5 . . . . ." ". . Contacts-area Contacts-area Contacts-area . . ." ". . Contacts-area Contacts-area Contacts-area . . ." ". . . . . . . .";
+}
+
+.Image-area-5 { grid-area: Image-area-5; }
+.Image-area-5 img{
+  width: 300px;
+}
+
+.Contacts-area { grid-area: Contacts-area; }
+
+.Contacts-area h2{
+  font-size: 4rem;
+  font-family: "Rubik Mono One", sans-serif;
+  transition: .3s;
+}
+
+.Contacts-area h2:hover{
+  color: rgb(126, 126, 126);
+}
+
+.Email { grid-area: Email; }
+
+.line-5 {
+  position: absolute;
+  width: 56vw;
+  height: 1px;
+  border: 1px solid black;
+  top: 67%;
+  left: 60%;
+  transform: rotate(0.14turn);
+}
+
+@media (min-width: 1200px) {
+  .Image img {
+    width: 450px;
+  }
+  .Headline h2 {
+    font-size: 4.5rem;
+  }
+  img.letter {
+    left: 12%;
+  }
+  .letter-2 {
+    width: 260px;
+  }
+}
+@media (min-width: 1400px) {
+  img.letter {
+    left: 13%;
+  }
+}
+
+@media (min-width: 1800px) {
+  img.letter {
+    left: 16%;
+  }
+}
